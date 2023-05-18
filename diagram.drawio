@@ -1,0 +1,136 @@
+<mxfile host="app.diagrams.net" modified="2023-05-17T19:53:27.482Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="LepXSp_O_61iXDfh1Ta0" version="21.3.2" type="device">
+  <diagram name="Page-1" id="9jUYqDGKl-rQ5DNVtu5S">
+    <mxGraphModel dx="1304" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-1" target="3G0gbCFOmfLACH73Wg2g-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="630" y="10" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-2" target="3G0gbCFOmfLACH73Wg2g-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-2" value="N" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="100" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-3" target="3G0gbCFOmfLACH73Wg2g-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-3" value="numall = {&amp;nbsp; }&lt;br&gt;primes = {&amp;nbsp; }&lt;br&gt;nprimes = 0&lt;br&gt;x = 2&lt;br&gt;i = 0" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="160" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-6" target="3G0gbCFOmfLACH73Wg2g-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-6" value="Wypełnij tablicę &lt;i&gt;numall&lt;/i&gt;&amp;nbsp;liczbami całkowitymi od 2 do &lt;i&gt;N&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-17" value="tak" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-12" target="3G0gbCFOmfLACH73Wg2g-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-12" target="3G0gbCFOmfLACH73Wg2g-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="543" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-40" value="nie" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3G0gbCFOmfLACH73Wg2g-36">
+          <mxGeometry x="-0.8769" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-12" value="&lt;i&gt;reszta z &lt;br&gt;numall[ i ]/x == 0&amp;nbsp;&lt;/i&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="615" y="490" width="130" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-16" target="3G0gbCFOmfLACH73Wg2g-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-16" value="&lt;i&gt;numall[ i ] = 0&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="640" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-18" target="3G0gbCFOmfLACH73Wg2g-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-18" value="i = i+4" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="465" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-29" value="nie" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-27" target="3G0gbCFOmfLACH73Wg2g-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-27" value="x &amp;gt; N/2" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-41" target="3G0gbCFOmfLACH73Wg2g-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-53" value="tak" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3G0gbCFOmfLACH73Wg2g-52">
+          <mxGeometry x="-0.1238" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-41" target="3G0gbCFOmfLACH73Wg2g-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-65" value="nie" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3G0gbCFOmfLACH73Wg2g-64">
+          <mxGeometry x="-0.8288" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-41" value="i &amp;gt; N" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="365" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-46" value="(Pomijam sprawdzanie liczb parzystych,&lt;br&gt;&amp;nbsp;bo te zostały już usunięte przez x = 2)&lt;br&gt;i = 4*x bo sprawdzamy od większych liczb" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="315" y="140" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-49" value="Dla każdej liczby z tablicy&amp;nbsp;&lt;i style=&quot;&quot;&gt;numall&amp;nbsp;&lt;/i&gt;&lt;span style=&quot;&quot;&gt;sprawdzam czy liczba != x,&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;jeśli tak to sprawdzam czy reszta z dzielenia jej przez x == 0, &lt;br&gt;jeśli tak nadpisuję liczbę wartością 0.&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="800" y="540" width="350" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-50" target="3G0gbCFOmfLACH73Wg2g-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-50" value="i = 4*x&lt;br&gt;x = x+1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="310" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-58" target="3G0gbCFOmfLACH73Wg2g-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-60" value="nie" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3G0gbCFOmfLACH73Wg2g-59">
+          <mxGeometry x="-0.7065" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3G0gbCFOmfLACH73Wg2g-58" target="3G0gbCFOmfLACH73Wg2g-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-63" value="tak" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3G0gbCFOmfLACH73Wg2g-62">
+          <mxGeometry x="-0.4396" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-58" value="reszta z&lt;br&gt;x / 2 = 0" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="290" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-68" value="Zapis wszystkich liczb z &lt;i&gt;numall&lt;/i&gt;&amp;nbsp;które !=0 do tablicy primes.&lt;br&gt;Z każdym dodaniem zwiększaj &lt;i&gt;nprimes&lt;/i&gt;&amp;nbsp;o 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="800" y="370" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-69" value="Można też sprawdzać tylko dla większych liczb" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="850" y="180" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3G0gbCFOmfLACH73Wg2g-70" value="i+ taka ilość bajtów żeby przejść do następnej liczby" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="435" width="300" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
