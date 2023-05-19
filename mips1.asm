@@ -32,7 +32,6 @@ li $t2, 2	# x, liczba dla której sprawdzamy podzielnoœ
 	
 
 petla:
-	bgt $t2, $s1, end	# Je¿eli x jest wiêksze od N/2 koñczê szukanie liczb pierwszych
 	lw $t0, numall($t1)	# Zapisujê wartoœæ numall(i) aby sprawdziæ jej podzielnoœæ
 	div $t0, $t2		# Dzielê numall(i) na X, aby potem sprawdziæ czy jest podzielne
 	mfhi $t0			# Pobieram wartoœæ reszty z dzielenia, aby sprawdziæ podzielnoœæ
@@ -54,11 +53,13 @@ iteracja:			# Doszliœmy do koñca pêtli, nastêpuje nastêpna iteracja:
 	div $t2, $t0		# Dzielê x/2, reszta z dzielenia da mi parzystoœæ
 	mfhi $t0			# Pobieram resztê z dzielenia
 	beqz $t0 iteracja	# Je¿eli x jest parzyste, to powracam do czêœci gdzie zwiêkszam x (pomijamy parzyste wartoœci x)
-					
-	j petla 			# Je¿eli x jest nieparzyste, powracam do g³ównej pêtli
-
-	
-	
+				# Je¿eli x jest nieparzyste, powracam do g³ównej pêtli
+	ble $t2, $s1, petla	# Je¿eli x jest mniejsze/równe od N/2 to kontynuuje szukanie liczb pierwszych
+				# Je¿eli x jest wiêksze od N/2, koñczymy
+countPrimes:
+				
+				
+				
 	
 end:
 	li $v0, 1	     # wartoœæ dla syscall do wyœwietlania liczby
