@@ -1,3 +1,4 @@
 Napisać ten sam program w Javie
 Porównać czasy wykonania
 Rozpisać wypełnianie tablicy oryginalnej na diagramie blokowym
+Look for possible ways to optimize assembly code
