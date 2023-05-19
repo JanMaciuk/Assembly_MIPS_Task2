@@ -1,0 +1,3 @@
+Napisać ten sam program w Javie
+Porównać czasy wykonania
+Rozpisać wypełnianie tablicy oryginalnej na diagramie blokowym
