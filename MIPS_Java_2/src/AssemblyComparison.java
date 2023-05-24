@@ -2,9 +2,9 @@ public class AssemblyComparison {
     private static int nprimes;
     public static void main(String[] args) {
         long startTime = System.nanoTime();
-        int[] primes = findPrimes(100);
-        System.out.println("Czas w nanosekundach:");
-        System.out.println(System.nanoTime()-startTime);
+        int[] primes = findPrimes(5000);
+        System.out.println("Czas w milisekundach:");
+        System.out.println((System.nanoTime()-startTime)/1000000.0);
         System.out.println("Liczba znalezionych liczb pierwszych: " + nprimes);
     }
 
@@ -36,4 +36,16 @@ public class AssemblyComparison {
 
         return primes;
     }
+    /*
+    Czas wykonania dla rozmiarów N:
+    N = 1000: Assembly: 0.2s, Java: 1.5ms
+    N = 2000: Assembly: 1.9s, Java: 2.7ms
+    N = 5000: Assembly: 9.6s, Java: 8.5ms
+
+    Jak widać Assembly MIPS jest znacznie wolniejszy od javy.
+    Wynika to głównie z emulacji MIPS przez środowisko MARS.
+    Kompilator Javy jest także ekstremalnie zoptymalizowany, w przeciwieństwie do kodu który sam napisałem w Assembly (mimo podstawowych optymalizacji).
+    Myślę że gdyby program Assembly był napisany w wersji natywnej dla systemu na którym jest uruchamiany, wykazałby się znacznie większą wydajnością.
+    Wiekowy już emulator architektury MIPS na pewno nie wykorzystuje całego potencjału nowoczesnego wielowątkowego procesora CISC.
+     */
 }

@@ -1,11 +1,11 @@
 .data
-numall: .word 0:204748364	# Ka¿da liczba zajmuje 4 bajty, odnosiæ siê do pozycji jako 0,4,8,12 itd
-primes: .word 0:1000
-N: .word 204748364
+numall: .word 0:1000	# Ka¿da liczba zajmuje 4 bajty, odnosiæ siê do pozycji jako 0,4,8,12 itd
+primes: .word 0:100
+N: .word 1000
 nPrimes: .word 0
 newLine: .asciiz "\n"
 amountString: .asciiz "Liczba znalezionych liczb pierwszych: "
-overflowString: .asciiz "overflow, wprowadŸ mniejsze N"
+overflowString: .asciiz "Overflow, wprowadŸ du¿o mniejsze N"
 
 
 
@@ -17,9 +17,9 @@ div  $t3, $t2	# uzyskuje N/2, najdalej do niego bêdê sprawdza³ podzielnoœci
 mflo $s1	# zapisuje ca³kowit¹ czêœæ wyniku dzielenia N/2 jako $s1
 li   $t0, 4	# zapisuje liczbê 4 tymczasowo aby przez ni¹ pomno¿yæ
 mult $t3, $t0	# Mno¿ê N*4, bêdê tego potrzebowa³ do porównywania z i (bo ka¿dy indeks i ma 4 bajty)
-mflo $s4	# s4 to N*4  (u¿ywane do porównywania z indeksem)	
-mfhi $t0 	#
-bnez $t0, over 	#	
+mflo $s4	# s4 to N*4  (u¿ywane do porównywania z indeksem)
+mfhi $t0	# Pobieram potencjalny overflow lub po prostu zeruje $t0
+bnez $t0, over	# Wykrywam wprowadzenie za du¿ego N (N*4 nie mieœci siê na 32 bitach)		
 		# $t0 u¿ywam jako rejest jednorazowy, do operacji takich jak mno¿enie
 
 inicjalizacjaTablicy:
@@ -91,18 +91,18 @@ print:
 	addi $t1, $t1, 4 	# Zwiêkszam indeks i
 	blt  $t1, $s2, print 	# Je¿eli i < nprimes*4 to nie skoñczyliœmy printowaæ, print nastêpnej liczby		
 	
-la   $a0, amountString	# Adres Stringa "Liczba znalezionych liczb pierwszych
+la   $a0, amountString	# Adres Stringa
 syscall
 li   $v0, 1		# Wartoœæ do wyœwietlenia liczby
 move $a0, $t4 		# Wyœwietlam nprimes
 syscall			
 
-li $v0, 10		# WyjdŸ z programu
+li $v0, 10	# WyjdŸ z programu
 syscall
 
 over:
-	li   $v0, 4			# Wartoœæ do wyœwietlenia stringa
-	la   $a0, overflowString	# Adres Stringa
+	li   $v0, 4		 # Wartoœæ do wyœwietlenia stringa
+	la   $a0, overflowString # Adres Stringa informuj¹cego o overflow
 	syscall
-	li $v0, 10			# WyjdŸ z programu
+	li $v0, 10		 # WyjdŸ z programu
 	syscall
