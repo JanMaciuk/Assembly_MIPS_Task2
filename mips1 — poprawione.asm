@@ -5,7 +5,6 @@ N: .word 100
 nPrimes: .word 0
 newLine: .asciiz "\n"
 amountString: .asciiz "Liczba znalezionych liczb pierwszych: "
-overflowString: .asciiz "Overflow, wprowadŸ du¿o mniejsze N"
 
 
 
@@ -13,12 +12,9 @@ overflowString: .asciiz "Overflow, wprowadŸ du¿o mniejsze N"
 li   $t1, 0	# i, indeks sprawdzanej liczby w array
 li   $t2, 2	# x, liczba dla której sprawdzamy podzielnoœæ
 lw   $t3, N	# zapisuje N do rejestru ¿eby je podzieliæ
-div  $t3, $t2	# uzyskuje N/2, najdalej do niego bêdê sprawdza³ podzielnoœci
-mflo $s1	# zapisuje ca³kowit¹ czêœæ wyniku dzielenia N/2 jako $s1
-sll $s4, $t3, 2 # FIX, sll zamiast mult, Mno¿ê N*4, bêdê tego potrzebowa³ do porównywania z i (bo ka¿dy indeks i ma 4 bajty)
-mfhi $t0	# Pobieram potencjalny overflow lub po prostu zeruje $t0
-bnez $t0, over	# Wykrywam wprowadzenie za du¿ego N (N*4 nie mieœci siê na 32 bitach)		
-		# $t0 u¿ywam jako rejest jednorazowy, do operacji takich jak mno¿enie
+sll  $s1, $t3, 1# FIX, sll zamiast mult, N*2, bedzie uzywane do sprawdzenia czy jestesmy na indeksie liczby N/2
+sll  $s4, $t3, 2# FIX, sll zamiast mult, Mno¿ê N*4, bêdê tego potrzebowa³ do porównywania z i (bo ka¿dy indeks i ma 4 bajty)		
+		# $t0 u¿ywam jako rejest jednorazowy,
 
 inicjalizacjaTablicy:
 	sw   $t2 ,numall($t1)	# Zapisuje kolejn¹ liczbê X do odpowiedniego miejsca na tablicy
@@ -27,36 +23,28 @@ inicjalizacjaTablicy:
 	addi $t2, $t2, 2	# Zwiêkszam X o jeden dla nastêpnej liczby (zmniejszy³em wczeœniej o 1 czyli teraz +2)
 	ble  $t2, $t3, inicjalizacjaTablicy 	# Powrót do pocz¹tku tablicy, chyba ¿e X==N, wtedy zape³niliœmy ca³¹
 
-		#Przed przejœciem do pêtli trzeba wyzerowaæ wartoœci X, i do 2, 0
-li $t1, 4	# i, indeks sprawdzanej liczby w array
-li $t2, 2	# x, liczba dla której sprawdzamy podzielnoœ
-	
+		#Przed przejœciem do pêtli trzeba wyzerowac wartosc i
+move $t1, $zero	# i to indeks sprawdzanej liczby w array
 
-petla:
-	lw   $t0, numall($t1)	# Zapisujê wartoœæ numall(i) aby sprawdziæ jej podzielnoœæ
-	div  $t0, $t2		# Dzielê numall(i) na X, aby potem sprawdziæ czy jest podzielne
-	mfhi $t0		# Pobieram wartoœæ reszty z dzielenia, aby sprawdziæ podzielnoœæ
-	bnez $t0 zwiekszIndex	# Je¿eli reszta !=0, to liczba nie jest podzielna, wiêc zostaje w tablicy
-	sw   $zero, numall($t1)	# Je¿eli liczba jest podzielna, to nie mo¿e byæ piersza, zerujê jej pozycje w tablicy
-	
-zwiekszIndex: 			# Przypisywanie nowych wartoœci zmiennych iteracji x,i,   skok jest ¿eby ³atwo pomijaæ nadpisywanie
-	addi $t1, $t1, 4	# Nowy indeks i, przechodzimy o 4 bajty do przodu, czyli o jedn¹ pozycje na liœcie
-	lw   $t0 numall($t1)	# £aduje wartoœæ numall[i], ¿eby sprawdziæ czy jest zerem
-	beqz $t0, zwiekszIndex	# Je¿eli numall[i] == 0, to ta liczba jest ju¿ usuniêta, nie ma sensu sprawdzaæ, pomijam
-	blt  $t1, $s4, petla 	# Je¿eli i<N*4 to nie doszliœmy do koñca pêtli, sprawdzam nastepn¹ pozycje na pêtli (zwiêkszy³em i)
-iteracja:			# Doszliœmy do koñca pêtli, nastêpuje nastêpna iteracja:
-	sll  $t1, $t2, 2 	# FIX zamiast mult sll, indeks i = 4*X
-	addi $t2, $t2, 1	# Nastêpna liczba x przez któr¹ sprawdamy podzielnoœæ to x+1
-				# Sprawdzanie czy nastêpna liczba x jest parzysta (wiadomo ¿e ¿adna nie bêdzie przez ni¹ podzielna bo usuneliœmy dla x=2)
-	li   $t0, 2		# £adujê 2 do rejestru tymczasowego ¿eby dzieliæ przez 2
-	div  $t2, $t0		# Dzielê x/2, reszta z dzielenia da mi parzystoœæ
-	mfhi $t0		# Pobieram resztê z dzielenia
-	beqz $t0 iteracja	# Je¿eli x jest parzyste, to powracam do czêœci gdzie zwiêkszam x (pomijamy parzyste wartoœci x)
-				# Je¿eli x jest nieparzyste, powracam do g³ównej pêtli
-	ble $t2, $s1, petla	# Je¿eli x jest mniejsze/równe od N/2 to kontynuuje szukanie liczb pierwszych
-				# Je¿eli x jest wiêksze od N/2, koñczymy
-				
-		# Ustwiam wartoœci dla nowej pêtli, teraz bêdê tworzy³	
+# Poczatek sita Eratostenesa:
+nextNumber:
+	lw   $t2, numall($t1)	# x = numall(i)
+	addi $t1, $t1, 4 	# i = i+4, przechodze do nastepnej liczby w tablicy
+	beqz $t2, nextNumber 	# Jezeli ta liczba jest wyzerowana to nie sprawdzamy jej wielokrotnosci
+
+sll  $t5, $t2, 2 	# X*4 = offset, czyli o ile zwiekszam liczbe zeby przejsc do nastepnej wielokrotnosci
+# X = (X*4)-8, adres liczby X to bylby X*4, ale musze odjac 8 bo tablica numall nie zaczyna sie od 0 tylko od 2
+subi $t2, $t5, 8
+
+zerowanie:
+	add $t2, $t2, $t5 	# x = x+offset, Przechodzê do nastêpnej wielokrotnoœci liczby
+	sw  $zero, numall($t2)	# numall(x) = 0, zeruje wielokrotnosci liczby X	
+	blt $t2, $s4, zerowanie # Jezeli x<N*4 to nie przeszedlem jeszcze tablicy do konca, nastepna iteracja
+	# Dotarlem do konca tablicy
+	blt $t1, $s1, nextNumber# Jezeli i<N*2 to nie dotarlem jeszcze do N/2, sprawdzam wielokrotnosci nastepnej liczby
+#Koniec sita Eratostenesa
+								
+		# Ustwiam wartoœci dla nowej pêtli
 li $t1, 0	# i bêdê u¿ywa³ do iterowania po numall[]
 li $t2, 0 	# x bêdê u¿ywa³ do iterowania po primes[]
 lw $t4, nPrimes # nprimes = 0	
@@ -91,10 +79,3 @@ syscall
 
 li $v0, 10	# WyjdŸ z programu
 syscall
-
-over:
-	li   $v0, 4		 # Wartoœæ do wyœwietlenia stringa
-	la   $a0, overflowString # Adres Stringa informuj¹cego o overflow
-	syscall
-	li $v0, 10		 # WyjdŸ z programu
-	syscall
